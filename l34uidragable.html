@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UI Draggable Method</title>
+	<link href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+		body{
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.contianer{
+			width: 900px;
+			height: 700px;
+			background: #f4f4f4;
+			box-shadow: 20px 0 5px #777;
+		}
+		.box{
+			width: 250px;
+			height: 150px;
+			background: steelblue;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="contianer">
+		<div id="darggme" class="box">
+			<p>Drag Me wherever you want !!!</p>
+		</div><!-- box -->
+		<div id="dargmeonx" class="box">
+			<p>Drag Me wherever you want X!!!</p>
+		</div><!-- box -->
+		<div id="dargmeony" class="box">
+			<p>Drag Me wherever you want Y!!!</p>
+		</div><!-- box -->
+		<div id="dragmeoncnt" class="box">
+			<p>Drag Me on container!!!</p>
+		</div><!-- box -->
+	</div><!-- container -->
+
+
+
+
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+	<script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// console.log('hi');
+
+			// $("#darggme").draggable({
+
+			// 	// cursor:"grab",
+			// 	// cursor:"move",
+			// 	// cursor:"crosshair",
+			// });
+			$("#dargmeonx").draggable(
+				{
+					axis:"x"
+				});
+			$("#dargmeony").draggable({
+				axis:"y"
+			});
+
+			// $("#dragmeoncnt").draggable({
+			// 	containment:".container"
+			// });
+
+			// $("#dargme,#dragmeoncnt").draggable({
+			// 	cancel:"#dargme"
+			// });
+
+			$("#darggme").draggable({
+				start:function(){
+					$(this).css("background-color","violet");
+				},
+				drag:function(){
+					$(this).text("Element is moving...");
+				},
+
+				stop:function(){
+					$(this).text("Element is stop!!!");
+				},
+
+				// revert:true,
+				// revertDuration:1000,
+
+				revert:function(){
+					$(this).css("background-color","orange");
+					return true
+				},
+				reverDuration:3000,
+
+				// grid:[0,10]//
+				// grid:[100,0]
+				grid:[100,200]
+			})
+
+		});
+	</script>
+</body>
+</html>

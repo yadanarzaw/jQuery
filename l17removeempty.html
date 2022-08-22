@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Remove Empty</title>
+
+</head>
+<body>
+
+	<div class="container">
+		<h1>Hello Headaing Tag H1</h1>
+		<h2>Hello Headaing Tag H2</h2>
+		<h3>Hello Headaing Tag H3</h3>
+		<h2>Hello Headaing Tag H2</h2>
+		<h1>Hello Headaing Tag H1</h1>
+		<span>Hello I am Span tag</span>
+	</div>
+
+	<div class="container">
+		<h1>Hello Headaing Tag H1</h1>
+		<h2>Hello Headaing Tag H2</h2>
+		<h3>Hello Headaing Tag H3</h3>
+		<h2 class="headingh2">Hello Headaing Tag H2</h2>
+		<h1>Hello Headaing Tag H1</h1>
+		<span>Hello I am Span tag</span>
+	</div>
+
+	<button type="button" id="removebtn">Remove</button>
+	<button type="button" id="emptybtn">Empty</button>
+	<button type="button" id="detachbtn">Detach</button>
+	<button type="button" id="addbtn">Add</button>
+
+
+<script src="./libs/jquery-3.6.0.min.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+ $(document).ready(function(){
+ 		// console.log('hay');
+
+
+ 		//remove() = remove self
+
+ 		$("#removebtn").click(function(){
+ 			// $("h1").remove();
+ 			//$("h1,h2").remove();
+
+ 			$("div").remove();
+
+ 		});
+
+ 		//empty ()= just remove child elements
+
+ 		$("#emptybtn").click(function(){
+ 			$("div").empty();
+ 		});
+
+ 		//detach() = remove
+
+ 		$("#detachbtn").click(function(){
+ 			$("div").detach();
+ 		});
+
+
+ 		//add
+
+ 		$("#addbtn").click(function(){
+ 			// $("h1").css({
+ 			// 	"background-color":"yellow",
+ 			// 	"border":"3px dashed red"
+
+ 			// });
+
+ 			// $("h1,h2").css({
+ 			// 	"background-color":"yellow",
+ 			// 	"border":"3px dashed red"
+
+ 			// });
+
+ 			// $("h1,span").css({
+ 			// 	"background-color":"yellow",
+ 			//  	"border":"3px dashed red"
+
+ 			//  });
+
+ 			// $("h1").add("span").css({
+ 			// 	"background-color":"yellow",
+ 			//  	"border":"3px dashed red"
+
+ 			//  });
+
+
+$("h1").add("span").add("h3").css({
+ 				"background-color":"yellow",
+ 			 	"border":"3px dashed red"
+
+ 			 });
+
+ 		});
+
+
+
+
+
+ });
+
+// $(window.document).ready(function(){
+// 		console.log('hay');
+// });
+
+// jQuery(document).ready(function(){
+// 		console.log('hay');
+// });
+
+// jQuery(window.document).ready(function(){
+// 		console.log('hay');
+// });
+
+// window.jQuery(document).ready(function(){
+// 		console.log('hay');
+// });
+</script>
+</body>
+
+</html>

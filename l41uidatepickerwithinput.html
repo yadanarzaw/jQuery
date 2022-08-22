@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UI Date and Time picker</title>
+	<link href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.container{
+			width: 900px;
+			background: #f4f4f4;
+			padding: 20px;
+		}
+
+		.form-group{
+			margin: 10px 0;
+		}
+		.form-group label{
+			font-size: 20px;
+			display: block;
+			margin-bottom: 20px;
+		}
+		.form-control{
+			font-size: 30px;
+			width: 100%;
+			padding: 5px;
+		}
+	</style>
+	</head>
+	<body>	
+
+		<div class="container">
+
+			<form accept="" method="">
+				<div class="form-group">
+					<label for="arrival">Arrival Date :</label>
+					<input type="text" name="arrival" id="arrival" class="form-control" readonly />
+					
+				</div>
+
+				<div class="form-group">
+					<label for="arrival">Booking Start Date:</label>
+					<input type="text" name="bookingstart" id="bookingstart" class="form-control" readonly />
+					
+				</div>
+
+
+				<div class="form-group">
+					<label for="arrival">Booking End Date :</label>
+					<input type="text" name="bookingend" id="bookingend" class="form-control" readonly />
+					
+				</div>
+			</form>
+			
+		</div>
+
+	
+		<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+			
+
+			$(document).ready(function(){
+				
+
+				$("#arrival").datepicker(
+					{  numberOfMonths:2,
+						//numberOfMonths:[2,4],
+
+						showAnim:"slide",
+						//showAnim:"slideDown",
+
+						duration:2000,
+
+						dayNamesMin:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+
+						// changeMonth:true,
+						// changeYear:true
+
+						// minDate:0 ,//Start from today,today is index number 0
+
+						// maxDate:1 //
+		minDate:'07/22/2022',
+		maxDate:'08/05/2022'
+
+
+
+					});
+
+				// $("#bookingstart").datepicker({
+				// 	numberOfMonths:2,
+				// 	showAnim:'slideDown',
+				// 	duration:'slow',
+				// 	dateFormat:"dd-mm-yy",
+				// 	onClose:fucnction(selectdate){
+				// 		$("#bodyingend").datepicker("option","minDate",selectdate);
+
+				// 	}
+				// });
+   	// 			$("#bookingend").datepicker({
+				// 	numberOfMonths:3,
+				// 	showAnim:'slideDown',
+				// 	duration:'slow',
+				// 	dateFormat:"dd-mm-yy",
+
+				// 	onClose:fucnction(selectdate){
+				// 		$("#bodyingstart").datepicker("option","maxDate",selectdate);
+
+				// 	}
+				// });
+
+			
+
+
+
+
+
+			});
+		</script>
+	</body>
+</html>
